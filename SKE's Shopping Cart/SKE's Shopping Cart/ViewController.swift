@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Shopping Cart by SKE
+//  SKE's Shopping Cart
 //
 //  Created by Sain-R Edwards Jr. on 8/26/17.
 //  Copyright © 2017 Appybuildmore. All rights reserved.
