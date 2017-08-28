@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		88667E851F525C5A006455AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88667E841F525C5A006455AA /* AppDelegate.swift */; };
-		88667E871F525C5A006455AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88667E861F525C5A006455AA /* ViewController.swift */; };
 		88667E8A1F525C5A006455AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88667E881F525C5A006455AA /* Main.storyboard */; };
 		88667E8C1F525C5A006455AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88667E8B1F525C5A006455AA /* Assets.xcassets */; };
 		88667E8F1F525C5A006455AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88667E8D1F525C5A006455AA /* LaunchScreen.storyboard */; };
+		88B5A7331F536EBE0055538F /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */; };
+		88B5A7351F537A4F0055538F /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7341F537A4F0055538F /* ShoppingCart.swift */; };
+		88B5A7371F537C380055538F /* CartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7361F537C380055538F /* CartData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88667E811F525C5A006455AA /* SKE's Shopping Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKE's Shopping Cart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88667E841F525C5A006455AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88667E861F525C5A006455AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88667E891F525C5A006455AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88667E8B1F525C5A006455AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88667E8E1F525C5A006455AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88667E901F525C5A006455AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		88B5A7341F537A4F0055538F /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		88B5A7361F537C380055538F /* CartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				88667E841F525C5A006455AA /* AppDelegate.swift */,
-				88667E861F525C5A006455AA /* ViewController.swift */,
+				88B5A7341F537A4F0055538F /* ShoppingCart.swift */,
+				88B5A7361F537C380055538F /* CartData.swift */,
+				88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */,
 				88667E881F525C5A006455AA /* Main.storyboard */,
 				88667E8B1F525C5A006455AA /* Assets.xcassets */,
 				88667E8D1F525C5A006455AA /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88667E871F525C5A006455AA /* ViewController.swift in Sources */,
 				88667E851F525C5A006455AA /* AppDelegate.swift in Sources */,
+				88B5A7371F537C380055538F /* CartData.swift in Sources */,
+				88B5A7351F537A4F0055538F /* ShoppingCart.swift in Sources */,
+				88B5A7331F536EBE0055538F /* ShoppingCartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +320,7 @@
 				88667E951F525C5A006455AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

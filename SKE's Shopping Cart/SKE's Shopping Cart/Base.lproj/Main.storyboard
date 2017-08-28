@@ -22,7 +22,7 @@
         <!--Cart-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SKE_s_Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ShoppingCartViewController" customModule="SKE_s_Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grk-Cd-5WX" userLabel="CartItemView">
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="grk-Cd-5WX" userLabel="CartItemView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="9al-Yx-N3s">
@@ -60,9 +60,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="34H-8R-9ET">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="34H-8R-9ET">
                                         <rect key="frame" x="263" y="107" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="iPadStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="zo2-Qq-Nwy"/>
+                                        </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-hg-hwA">
                                         <rect key="frame" x="244" y="111" width="14" height="17"/>
@@ -70,7 +73,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tv" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-tc-OJz">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-tc-OJz">
                                         <rect key="frame" x="8" y="160" width="359" height="130"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxr-qI-LWz">
@@ -88,6 +91,9 @@
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-as-7dh">
                                         <rect key="frame" x="263" y="252" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="appledTVStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xlo-aL-8PO"/>
+                                        </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa9-iK-eJL">
                                         <rect key="frame" x="244" y="258" width="14" height="17"/>
@@ -95,7 +101,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_watch" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-wV-vg0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-wV-vg0">
                                         <rect key="frame" x="8" y="305" width="359" height="130"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2D-bq-Beh">
@@ -113,6 +119,9 @@
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TzS-H4-6W0">
                                         <rect key="frame" x="263" y="397" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="appleWatchStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="YBn-29-Gv5"/>
+                                        </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-I5-Xgg">
                                         <rect key="frame" x="244" y="403" width="14" height="17"/>
@@ -162,6 +171,9 @@
                                         <state key="normal" title="Place Order">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="placeOrderButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CTs-9r-hip"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,6 +236,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="Xrk-dw-Iiv"/>
+                    <connections>
+                        <outlet property="appleTVImageView" destination="xDX-tc-OJz" id="4tB-pn-vWY"/>
+                        <outlet property="appleTVPriceLabel" destination="thw-Ub-7vn" id="mur-KV-WPX"/>
+                        <outlet property="appleTVStepperLabel" destination="qa9-iK-eJL" id="dsA-ku-ILd"/>
+                        <outlet property="appleTVTitleLabel" destination="uxr-qI-LWz" id="2O0-Rp-eks"/>
+                        <outlet property="appleWatchImageView" destination="ag0-wV-vg0" id="nQW-Tf-lYM"/>
+                        <outlet property="appleWatchPriceLabel" destination="N2D-bq-Beh" id="WNS-oS-ytJ"/>
+                        <outlet property="appleWatchStepperLabel" destination="8Ln-I5-Xgg" id="fdh-KV-dLG"/>
+                        <outlet property="appleWatchTitleLabel" destination="IXn-eg-DOy" id="vm9-Tq-U5h"/>
+                        <outlet property="iPadProImageView" destination="9al-Yx-N3s" id="hTo-7j-Rps"/>
+                        <outlet property="iPadProPriceLabel" destination="jNQ-ZK-g69" id="flt-us-fK0"/>
+                        <outlet property="iPadProTitleLabel" destination="PtJ-np-tdb" id="zNs-cv-5Yo"/>
+                        <outlet property="ipadProStepperLabel" destination="8vb-hg-hwA" id="9Bg-VY-Unb"/>
+                        <outlet property="totalLabel" destination="PrG-hK-e8Y" id="uS0-YK-0KJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +277,5 @@
     </scenes>
     <resources>
         <image name="img_ipad" width="343" height="130"/>
-        <image name="img_tv" width="343" height="130"/>
-        <image name="img_watch" width="343" height="130"/>
     </resources>
 </document>
