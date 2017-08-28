@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -60,11 +61,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="34H-8R-9ET">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="34H-8R-9ET">
                                         <rect key="frame" x="263" y="107" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="iPadStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="zo2-Qq-Nwy"/>
+                                            <action selector="item1StepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fqt-hr-QFr"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-hg-hwA">
@@ -92,7 +93,7 @@
                                         <rect key="frame" x="263" y="252" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="appledTVStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xlo-aL-8PO"/>
+                                            <action selector="item2StepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="cWq-14-ZfE"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa9-iK-eJL">
@@ -120,7 +121,7 @@
                                         <rect key="frame" x="263" y="397" width="94" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="appleWatchStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="YBn-29-Gv5"/>
+                                            <action selector="item3StepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="IBd-VE-3GD"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-I5-Xgg">
@@ -173,6 +174,7 @@
                                         </state>
                                         <connections>
                                             <action selector="placeOrderButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CTs-9r-hip"/>
+                                            <segue destination="aLT-kY-6tB" kind="push" identifier="ShowCheckout" id="OSD-2R-eVb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -237,24 +239,155 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="Xrk-dw-Iiv"/>
                     <connections>
-                        <outlet property="appleTVImageView" destination="xDX-tc-OJz" id="4tB-pn-vWY"/>
-                        <outlet property="appleTVPriceLabel" destination="thw-Ub-7vn" id="mur-KV-WPX"/>
-                        <outlet property="appleTVStepperLabel" destination="qa9-iK-eJL" id="dsA-ku-ILd"/>
-                        <outlet property="appleTVTitleLabel" destination="uxr-qI-LWz" id="2O0-Rp-eks"/>
-                        <outlet property="appleWatchImageView" destination="ag0-wV-vg0" id="nQW-Tf-lYM"/>
-                        <outlet property="appleWatchPriceLabel" destination="N2D-bq-Beh" id="WNS-oS-ytJ"/>
-                        <outlet property="appleWatchStepperLabel" destination="8Ln-I5-Xgg" id="fdh-KV-dLG"/>
-                        <outlet property="appleWatchTitleLabel" destination="IXn-eg-DOy" id="vm9-Tq-U5h"/>
-                        <outlet property="iPadProImageView" destination="9al-Yx-N3s" id="hTo-7j-Rps"/>
-                        <outlet property="iPadProPriceLabel" destination="jNQ-ZK-g69" id="flt-us-fK0"/>
-                        <outlet property="iPadProTitleLabel" destination="PtJ-np-tdb" id="zNs-cv-5Yo"/>
-                        <outlet property="ipadProStepperLabel" destination="8vb-hg-hwA" id="9Bg-VY-Unb"/>
+                        <outlet property="item1ImageView" destination="9al-Yx-N3s" id="v4b-oK-IhX"/>
+                        <outlet property="item1PriceLabel" destination="jNQ-ZK-g69" id="Q70-g5-U7v"/>
+                        <outlet property="item1QuantityLabel" destination="8vb-hg-hwA" id="ji6-EN-5W7"/>
+                        <outlet property="item1Stepper" destination="34H-8R-9ET" id="xTo-Ax-goP"/>
+                        <outlet property="item1TitleLabel" destination="PtJ-np-tdb" id="3h1-VF-udg"/>
+                        <outlet property="item2ImageView" destination="xDX-tc-OJz" id="Cm9-As-xV9"/>
+                        <outlet property="item2PriceLabel" destination="thw-Ub-7vn" id="k0a-BC-3iP"/>
+                        <outlet property="item2QuantityLabel" destination="qa9-iK-eJL" id="K1C-tK-zlu"/>
+                        <outlet property="item2Stepper" destination="DeR-as-7dh" id="02O-AZ-M7r"/>
+                        <outlet property="item2TitleLabel" destination="uxr-qI-LWz" id="ZN9-jj-kLj"/>
+                        <outlet property="item3ImageView" destination="ag0-wV-vg0" id="Uy8-i9-wev"/>
+                        <outlet property="item3PriceLabel" destination="N2D-bq-Beh" id="rFP-26-nj6"/>
+                        <outlet property="item3QuantityLabel" destination="8Ln-I5-Xgg" id="uOW-w9-Dgt"/>
+                        <outlet property="item3Stepper" destination="TzS-H4-6W0" id="GjF-l7-Sbd"/>
+                        <outlet property="item3TitleLabel" destination="IXn-eg-DOy" id="dna-x9-zis"/>
                         <outlet property="totalLabel" destination="PrG-hK-e8Y" id="uS0-YK-0KJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="138.98050974512745"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="JC6-rT-xmt">
+            <objects>
+                <viewController id="aLT-kY-6tB" customClass="CheckoutViewController" customModule="SKE_s_Shopping_Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4y-qh-ZxB"/>
+                        <viewControllerLayoutGuide type="bottom" id="wUm-vl-9vc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ixI-Nf-PFu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_total" translatesAutoresizingMaskIntoConstraints="NO" id="kCe-9b-vXv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="9Cl-Fq-Xie"/>
+                                    <constraint firstAttribute="height" constant="276" id="muV-Ms-TaG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1g-8D-nCB">
+                                <rect key="frame" x="117" y="187" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="ERB-T7-1i9"/>
+                                    <constraint firstAttribute="height" constant="30" id="Z43-Yi-Hkk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total including tax" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx9-VS-qZg">
+                                <rect key="frame" x="131" y="225" width="113" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="XDW-5Y-xOB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbR-Ce-mR4">
+                                <rect key="frame" x="80" y="431" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="gQu-Ss-QBI"/>
+                                    <constraint firstAttribute="height" constant="80" id="hMe-cI-if4"/>
+                                </constraints>
+                                <state key="normal" image="icon_standard"/>
+                                <connections>
+                                    <action selector="standardShippingButtonTapped:" destination="aLT-kY-6tB" eventType="touchUpInside" id="Fag-SN-c5T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-dk-e0W">
+                                <rect key="frame" x="215" y="431" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1PX-QC-yDN"/>
+                                    <constraint firstAttribute="width" constant="80" id="5px-mJ-NLU"/>
+                                </constraints>
+                                <state key="normal" image="icon_express"/>
+                                <connections>
+                                    <action selector="expressShippingButtonTapped:" destination="aLT-kY-6tB" eventType="touchUpInside" id="tfV-vx-0eF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paS-ac-cTm">
+                                <rect key="frame" x="99" y="519" width="42" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="dVw-m8-mgE"/>
+                                    <constraint firstAttribute="height" constant="23" id="lvK-kd-pFP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$15.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-1K-Erg">
+                                <rect key="frame" x="227" y="520" width="57" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="aII-Kd-eUk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wel-YF-cch">
+                                <rect key="frame" x="0.0" y="625" width="375" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="JoO-13-6Dk"/>
+                                    <constraint firstAttribute="height" constant="42" id="RYA-nV-t5h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Place Order"/>
+                                <connections>
+                                    <action selector="placeOrderButtonTapped:" destination="aLT-kY-6tB" eventType="touchUpInside" id="vZ9-xV-NRw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="A1g-8D-nCB" secondAttribute="trailing" constant="102" id="4tL-Z3-1W2"/>
+                            <constraint firstAttribute="trailing" secondItem="kCe-9b-vXv" secondAttribute="trailing" id="7XL-ev-f45"/>
+                            <constraint firstItem="PLa-1K-Erg" firstAttribute="centerX" secondItem="NDl-dk-e0W" secondAttribute="centerX" id="E0a-mW-E9u"/>
+                            <constraint firstItem="kCe-9b-vXv" firstAttribute="leading" secondItem="ixI-Nf-PFu" secondAttribute="leading" id="Fse-eJ-sb5"/>
+                            <constraint firstItem="wUm-vl-9vc" firstAttribute="top" secondItem="Wel-YF-cch" secondAttribute="bottom" id="GcJ-GQ-IKY"/>
+                            <constraint firstItem="paS-ac-cTm" firstAttribute="top" secondItem="rbR-Ce-mR4" secondAttribute="bottom" constant="8" id="JgR-ZW-VoS"/>
+                            <constraint firstItem="paS-ac-cTm" firstAttribute="centerX" secondItem="rbR-Ce-mR4" secondAttribute="centerX" id="OpE-Rs-rkE"/>
+                            <constraint firstItem="tx9-VS-qZg" firstAttribute="leading" secondItem="ixI-Nf-PFu" secondAttribute="leadingMargin" constant="115" id="Pb9-OK-7dm"/>
+                            <constraint firstItem="Wel-YF-cch" firstAttribute="leading" secondItem="ixI-Nf-PFu" secondAttribute="leading" id="QYs-S8-iid"/>
+                            <constraint firstItem="rbR-Ce-mR4" firstAttribute="top" secondItem="kCe-9b-vXv" secondAttribute="bottom" constant="91" id="WE6-ci-uPo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tx9-VS-qZg" secondAttribute="trailing" constant="115" id="h32-Gt-kcx"/>
+                            <constraint firstItem="rbR-Ce-mR4" firstAttribute="leading" secondItem="ixI-Nf-PFu" secondAttribute="leading" constant="80" id="j6d-4T-0MP"/>
+                            <constraint firstAttribute="trailing" secondItem="NDl-dk-e0W" secondAttribute="trailing" constant="80" id="k1G-vM-l8h"/>
+                            <constraint firstItem="NDl-dk-e0W" firstAttribute="top" secondItem="kCe-9b-vXv" secondAttribute="bottom" constant="91" id="kH6-rQ-atr"/>
+                            <constraint firstItem="tx9-VS-qZg" firstAttribute="top" secondItem="A1g-8D-nCB" secondAttribute="bottom" constant="8" id="kNp-v3-UWp"/>
+                            <constraint firstItem="A1g-8D-nCB" firstAttribute="leading" secondItem="ixI-Nf-PFu" secondAttribute="leadingMargin" constant="101" id="kyO-KL-LcZ"/>
+                            <constraint firstItem="A1g-8D-nCB" firstAttribute="top" secondItem="x4y-qh-ZxB" secondAttribute="bottom" constant="123" id="lAH-Gk-pET"/>
+                            <constraint firstAttribute="trailing" secondItem="Wel-YF-cch" secondAttribute="trailing" id="olD-9t-R7B"/>
+                            <constraint firstItem="PLa-1K-Erg" firstAttribute="top" secondItem="NDl-dk-e0W" secondAttribute="bottom" constant="9" id="q4A-Vf-F04"/>
+                            <constraint firstItem="kCe-9b-vXv" firstAttribute="top" secondItem="x4y-qh-ZxB" secondAttribute="bottom" id="qkt-fE-kaK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vDR-Q5-YDV"/>
+                    <connections>
+                        <outlet property="expressShippingBtn" destination="NDl-dk-e0W" id="1tc-Yp-m9W"/>
+                        <outlet property="standardShippingBtn" destination="rbR-Ce-mR4" id="qhG-99-iit"/>
+                        <outlet property="totalLabel" destination="A1g-8D-nCB" id="5o9-Et-nv7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMs-xm-3U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dxZ-p2-deU">
@@ -276,6 +409,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_express" width="96" height="96"/>
+        <image name="icon_standard" width="96" height="96"/>
         <image name="img_ipad" width="343" height="130"/>
+        <image name="img_total" width="343" height="183"/>
     </resources>
 </document>

@@ -13,7 +13,9 @@
 		88667E8F1F525C5A006455AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88667E8D1F525C5A006455AA /* LaunchScreen.storyboard */; };
 		88B5A7331F536EBE0055538F /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */; };
 		88B5A7351F537A4F0055538F /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7341F537A4F0055538F /* ShoppingCart.swift */; };
-		88B5A7371F537C380055538F /* CartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5A7361F537C380055538F /* CartData.swift */; };
+		88C24E771F54867A00A7F14D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C24E761F54867A00A7F14D /* ItemStore.swift */; };
+		88C24E791F548BAE00A7F14D /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C24E781F548BAE00A7F14D /* Calculator.swift */; };
+		88C24E7E1F5493DB00A7F14D /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C24E7D1F5493DB00A7F14D /* CheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		88667E901F525C5A006455AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		88B5A7341F537A4F0055538F /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
-		88B5A7361F537C380055538F /* CartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartData.swift; sourceTree = "<group>"; };
+		88C24E761F54867A00A7F14D /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		88C24E781F548BAE00A7F14D /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		88C24E7D1F5493DB00A7F14D /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				88667E841F525C5A006455AA /* AppDelegate.swift */,
-				88B5A7341F537A4F0055538F /* ShoppingCart.swift */,
-				88B5A7361F537C380055538F /* CartData.swift */,
-				88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */,
-				88667E881F525C5A006455AA /* Main.storyboard */,
+				88C24E7A1F548E5100A7F14D /* Model */,
+				88C24E7B1F54919E00A7F14D /* View */,
+				88C24E7C1F5491B900A7F14D /* Controller */,
 				88667E8B1F525C5A006455AA /* Assets.xcassets */,
 				88667E8D1F525C5A006455AA /* LaunchScreen.storyboard */,
 				88667E901F525C5A006455AA /* Info.plist */,
 			);
 			path = "SKE's Shopping Cart";
+			sourceTree = "<group>";
+		};
+		88C24E7A1F548E5100A7F14D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88B5A7341F537A4F0055538F /* ShoppingCart.swift */,
+				88C24E761F54867A00A7F14D /* ItemStore.swift */,
+				88C24E781F548BAE00A7F14D /* Calculator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88C24E7B1F54919E00A7F14D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88667E881F525C5A006455AA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88C24E7C1F5491B900A7F14D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88B5A7321F536EBE0055538F /* ShoppingCartViewController.swift */,
+				88C24E7D1F5493DB00A7F14D /* CheckoutViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88667E851F525C5A006455AA /* AppDelegate.swift in Sources */,
-				88B5A7371F537C380055538F /* CartData.swift in Sources */,
 				88B5A7351F537A4F0055538F /* ShoppingCart.swift in Sources */,
+				88C24E771F54867A00A7F14D /* ItemStore.swift in Sources */,
 				88B5A7331F536EBE0055538F /* ShoppingCartViewController.swift in Sources */,
+				88C24E7E1F5493DB00A7F14D /* CheckoutViewController.swift in Sources */,
+				88C24E791F548BAE00A7F14D /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +189,7 @@
 				88667E891F525C5A006455AA /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		88667E8D1F525C5A006455AA /* LaunchScreen.storyboard */ = {
